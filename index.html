@@ -1,31 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Weather App</title>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <link rel="stylesheet" href="main.css" />
-</head>
-<body>
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1 class="text-center title">Weather in</h1>
+      <form class="search-location">
+        <input
+          type="text"
+          name="city"
+          data-city-search
+          placeholder="Enter Location"
+          class="form-control text-muted form-round p-4 shadow-sm"
+        />
+      </form>
+      
+      <div class="card rounded my-3 shadow-lg d-none back-card">
+        <div class="card-top text-center">
+          <div class="city-name my-3">
+            <p>New York</p>
+            <span>...</span>
+          </div>
+          <img src="img/night_image.svg" alt="" class="card-img-top time" />
+        </div>
 
-    <div class="app-wrap">
-        <header>
-            <input type="text" autocomplete="off" class="search-box"
-            placeholder="Search for a city..." />
-        </header>
-        <main>
-            <section class="location">
-                <div class="city">Grand Rapids, MI</div>
-                <div class="date">Thursday 4 June 2020</div>
-            </section>
-            <div class="current">
-                <div class="temp">15<span>°F</span></div>
-                <div class="weather">Sunny</div>
-                <div class="hi-low">60°F / 70°F</div>
+        <div class="card-body">
+          <div class="card-mid row">
+            <div class="col-8 text-center temp">
+              <span>30&deg;F</span>
             </div>
-        </main>
+            <div class="col-4 condition-temp">
+              <p class="condition">Thunder Storm</p>
+              <p class="high">74&deg;F</p>
+              <p class="low">55&deg;F</p>
+            </div>
+          </div>
+
+          <div class="icon-container card shadow mx-auto">
+            <img src="img/cloud.svg" alt="" />
+          </div>
+          <div class="card-bottom px-5 py-4 row">
+            <div class="col text-center">
+              <p>65&deg;F</p>
+              <span>Feels Like</span>
+            </div>
+            <div class="col text-center">
+              <p>55%</p>
+              <span>Humidity</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="main.js"></script>
-</body>
+    <script src="request.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
